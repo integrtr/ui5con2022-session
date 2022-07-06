@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>UI5con2022</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://openui5.org/ui5con/germany2022/images/icon.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        background-color: #242424;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .flex {
+        display: flex;
+      }
+      .header {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+      }
+      .header img {
+        height: 120px;
+      }
+      .header h4 {
+        color: #ffa42c;
+        font-size: 32px;
+      }
+      .content {
+        width: 80%;
+        margin: auto;
+        margin-top: 4rem;
+      }
+      .content > div {
+        flex-direction: column;
+        width: 50%;
+      }
+      .content .list-item {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 16px;
+        font-weight: 600;
+        padding: 0px 16px;
+        border-radius: 6px;
+        border: 0.0625rem solid #ff4700;
+        border-left: 0.2rem solid #ff4700;
+        background: linear-gradient(to right, #ff470021, #0000000f);
+      }
+      .content .list-item:hover {
+        background: linear-gradient(to right, #ff470078, #ffcb866e);
+      }
+      .content .list-item.selected {
+        border: 0.0625rem solid #ffa42c;
+        border-left: 0.2rem solid #ffa42c;
+        background: linear-gradient(to right, #ff470078, #ffcb866e);
+      }
+      .content .list-item p {
+        font-size: 16px;
+        color: white;
+        line-height: 16px;
+        margin-left: 10px;
+      }
+      .content .list-item span.icon {
+        font-size: 22px;
+        color: #ffa42c;
+        display: none;
+      }
+      .content .list-item.selected span.icon {
+        display: block;
+      }
+
+      .content .list-item span.icon.wait {
+        display: block;
+      }
+
+      .content .list-item.selected span.icon.wait {
+        display: none;
+      }
+    </style>
+  </head>
+  <body onload="onPageLoad">
+    <div>
+      <div class="header flex">
+        <img
+          src="https://openui5.org/ui5con/launchpad/data/pictures/logo.png"
+        />
+        <h4>Uncovering the hidden gem - UI5 developer tools</h4>
+      </div>
+      <div class="content flex">
+        <div class="flex">
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Enabling debug mode in UI5</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Browser console API</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Watch & Live expressions</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Conditional breakpoints</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>DOM and XHR breakpoints</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Browser design mode</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>JSON Models in browser console</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Validating application with UI5 versions</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Analyzing OData requests</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>UI5 control tree debugging</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Class level breakpoints</p>
+          </div>
+          <div class="list-item">
+            <span class="material-symbols-outlined icon wait">
+              hourglass_top
+            </span>
+            <span class="material-symbols-outlined icon"> verified </span>
+            <p>Finding event handlers from browser</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+  <script>
+    document
+      .querySelectorAll(".list-item")
+      .forEach(
+        (item) =>
+          (item.onclick = (event) =>
+            event.currentTarget.classList.add("selected"))
+      );
+  </script>
+</html>
